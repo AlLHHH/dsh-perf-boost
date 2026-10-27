@@ -1,0 +1,56 @@
+{
+  "name": "dsh-perf-boost",
+  "version": "0.1.0",
+  "description": "DSH 桌面端性能优化（纯客户端）：长对话省渲染、窗口隐藏不排帧默认开，关背景模糊/减少动画/空闲降帧按需打开，设置页显示实测省下的主线程时间。Client-side rendering optimizations for DeepSeek Harness Desktop.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js"
+  },
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "performance",
+    "fps",
+    "requestanimationframe",
+    "content-visibility"
+  ],
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-0"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlLHHH/dsh-perf-boost.git"
+  },
+  "homepage": "https://github.com/AlLHHH/dsh-perf-boost#readme",
+  "bugs": {
+    "url": "https://github.com/AlLHHH/dsh-perf-boost/issues"
+  },
+  "sideEffects": false,
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots",
+        "sessions"
+      ]
+    }
+  }
+}

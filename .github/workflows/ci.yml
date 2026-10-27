@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: 语法检查
+        run: |
+          node --check lib/index.js
+          node --check lib/client.js
+          node --check scripts/build-index.mjs
+          node --check scripts/check-index.mjs
+
+      - name: 单元测试
+        run: node --test test/index.test.mjs
+
+      - name: 客户端冒烟测试
+        run: node scripts/smoke-client.mjs
+
+      - name: 生成并校验市场索引
+        if: matrix.node == 24
+        run: |
+          node scripts/build-index.mjs
+          node scripts/check-index.mjs
+
+      - name: 打包清单
+        run: npm pack --dry-run

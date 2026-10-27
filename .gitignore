@@ -1,0 +1,9 @@
+node_modules/
+*.log
+*.sync-tmp
+.DS_Store
+Thumbs.db
+dist/
+tmp/
+.vscode/
+.idea/

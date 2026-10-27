@@ -1,0 +1,7 @@
+url: https://github.com/AlLHHH/dsh-perf-boost
+name: AlLHHH/dsh-perf-boost
+category: ui
+description:
+  en: Client-side rendering optimizations for the DSH desktop app, exposed as nine independently switchable options; the six that are on by default apply content-visibility to long message lists, skip animation frames and interval callbacks while the window is hidden, cap the frame rate after 20 seconds of idle, and defer image, video and off-screen video decoding.
+  zh: DSH 桌面端的客户端渲染优化插件，九项开关可单独控制；默认开启的六项对长消息列表启用按需渲染、窗口隐藏时停送帧并跳过定时器回调、空闲 20 秒后降帧、图片与视频延迟加载并暂停视口外视频解码。
+icon: https://raw.githubusercontent.com/AlLHHH/dsh-perf-boost/main/assets/icon-180.png
