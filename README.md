@@ -9,6 +9,13 @@ Client-side rendering optimizations for DSH Desktop.
 
 ## 更新详情
 
+### 0.2.1
+
+- 新增了「大会话预热」的开关，设置页里点一下就能关的功能
+- 新增了浅色模式下的配色，开关和分隔线跟着文字颜色走的效果
+- 优化了开关说明的文字，统一改成「可能会导致……」的效果
+
+
 ### 0.2.0
 
 - 新增了设置页「更新详情」，能直接看到每个版本改了什么的功能
@@ -88,6 +95,8 @@ pnpm add file:./dsh-perf-boost
 - 只修改当前渲染进程：不改宿主代码，不落盘配置，不发送遥测。配置存于 `localStorage['dsh-perf-boost:cfg']`。
 - 唯一的网络请求是「检查更新」：页面 POST 到 `/api/dsh-perf-boost/update-check`，由宿主查询 npm 的 latest（CSP 限制页面不能直接跨域）。查询失败显示「未查到」，不影响功能。
 - `requestAnimationFrame` 仅在启用「窗口隐藏不排帧」或「空闲降帧」时接管，否则保持原生实现。
+
+大会话预热可以在设置页里关掉，也可以在插件配置里写 `warmup: false` 一次性关掉。
 
 ## 已知限制
 
