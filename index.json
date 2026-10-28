@@ -34,7 +34,7 @@
           "source": {
             "type": "git",
             "url": "https://github.com/AlLHHH/dsh-perf-boost",
-            "commit": "1f943c625f4d68878e10463c4880437425e6f0d3"
+            "commit": "e2161b7716b680cfd101910a9ac9ca0165ad0b71"
           },
           "engines": {
             "dsh": ">=0.2.0-0"
