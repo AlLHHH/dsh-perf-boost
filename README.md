@@ -108,7 +108,7 @@ pnpm add file:./dsh-perf-boost
 
 ## 兼容
 
-- `engines.dsh >= 0.2.0-0`，实测 0.2.1-rc.2（桌面版 0.2.1.0）
+- `engines.dsh >= 0.2.0-0`，实测 0.2.1-rc.3（桌面版 0.2.1.0）
 - peer `@deepseek-ai/cordis ^4.0.1`，实测 4.0.5
 - 依赖客户端插件 API：`window.__ModuleLoader__.load`、`slots`（`settings.section`）、`require('react')`
 
