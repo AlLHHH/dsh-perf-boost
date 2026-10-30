@@ -53,7 +53,7 @@ const index = {
         en: 'Long-transcript content-visibility, background timer pause, list publish coalescing, media lazy-load, and measured main-thread savings.',
         zh: '长对话省渲染、后台暂停定时器、会话列表节流、媒体懒加载、视口外暂停视频；设置页显示实测省下的主线程时间。',
       },
-      icon: 'assets/icon.svg',
+      icon: 'assets/icon-180.png',
       author: 'AlL',
       homepage: pkg.homepage ?? repoUrl,
       repository: { url: repoUrl },
