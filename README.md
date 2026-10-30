@@ -9,6 +9,11 @@ Client-side rendering optimizations for DSH Desktop.
 
 ## 更新详情
 
+### 0.2.2
+
+- 优化了长对话省渲染的实现，改成一处分样式接管子项，新消息进来自动生效的效果
+- 修复了流式输出时每来一条消息就扫一遍页面的问题，改成一分钟几十次的空闲巡检的问题
+
 ### 0.2.1
 
 - 新增了「大会话预热」的开关，设置页里点一下就能关的功能
@@ -35,7 +40,7 @@ Client-side rendering optimizations for DSH Desktop.
 
 | 开关 | 默认 | 影响视觉 | 作用 |
 | --- | --- | --- | --- |
-| 长对话省渲染 | 开 | 无 | 列表子项加 `content-visibility: auto`，占位高度取该列表实测平均子项高度；末尾 4 项与正在流式输出的消息不处理，超过 300px 的代码块同样跳过 |
+| 长对话省渲染 | 开 | 无 | 给滚动列表容器挂一个 class，子项的 `content-visibility: auto` 由一条 CSS 规则接管（新消息自动生效，不用逐个打 inline style），占位高度取该列表实测平均子项高度；末尾 4 项与标了 `aria-busy` 的消息保持正常渲染，代码块单独按 300px 跳过 |
 | 窗口隐藏不排帧 | 开 | 无 | 页面不可见时 `schedule()` 直接返回；切回时有 `visibilitychange` 钩子恢复，每秒看门狗兜底 |
 | 空闲降帧 | 开 | 无 | 20 秒无输入将 rAF 驱动的动画降到 30fps，有输入立即恢复 |
 | 媒体懒加载 | 开 | 无 | 图片加 `loading=lazy`、`decoding=async`，视频加 `preload=metadata` |
