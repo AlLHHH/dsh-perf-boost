@@ -99,7 +99,8 @@ check('首屏扫描走了 requestIdleCallback', idleCalls >= 1, 'idleCalls=' + i
 // —— ① 不可见时跳过回调，回前台补跳一次 ——
 let ticks = 0;
 win.setInterval(() => { ticks++; }, 20);
-await new Promise((r) => setTimeout(r, 90));
+// 等它真跑起来再取样：固定睡 90ms 在忙机器上只来得及跑 1 次，会假失败。
+for (let i = 0; i < 50 && ticks < 2; i += 1) await new Promise((r) => setTimeout(r, 10));
 const visibleTicks = ticks;
 documentStub.hidden = true;
 await new Promise((r) => setTimeout(r, 120));
