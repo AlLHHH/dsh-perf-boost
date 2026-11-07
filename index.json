@@ -30,11 +30,11 @@
       "versions": [
         {
           "version": "0.2.5",
-          "publishTimestamp": 1794062366,
+          "publishTimestamp": 1794062569,
           "source": {
             "type": "git",
             "url": "https://github.com/AlLHHH/dsh-perf-boost",
-            "commit": "635d1b6d079a390dfa44c3d4a7b241808e7af9b4"
+            "commit": "afeeed4f3b45579b393c7cfef40d6dd021f58b2b"
           },
           "engines": {
             "dsh": ">=0.2.0-0"
