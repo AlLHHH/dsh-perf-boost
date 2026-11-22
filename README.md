@@ -1,5 +1,7 @@
 # dsh-perf-boost
 
+[English](./README.en.md) · [中文](./README.md)
+
 DeepSeek Harness 桌面端的客户端渲染优化插件，全部改动只发生在渲染进程。
 
 Client-side rendering optimizations for DSH Desktop.
